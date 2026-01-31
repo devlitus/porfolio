@@ -1,0 +1,41 @@
+---
+interface Props {
+  description: string;
+  topics: string[];
+}
+
+const { description, topics } = Astro.props;
+---
+
+<!-- Overview Section -->
+<section>
+  <div class="flex items-center gap-3 mb-6">
+    <span class="material-symbols-outlined text-primary">article</span>
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">
+      About This Project
+    </h2>
+  </div>
+  <div
+    class="prose prose-lg dark:prose-invert text-slate-600 dark:text-gray-300 leading-relaxed max-w-none"
+  >
+    <p class="mb-6">
+      {description}
+    </p>
+    {
+      topics.length > 0 && (
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-3">
+            Topics
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {topics.map((topic) => (
+              <span class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium">
+                {topic}
+              </span>
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>

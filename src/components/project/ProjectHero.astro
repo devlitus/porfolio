@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  name: string;
+  description: string;
+  imageUrl: any; // ImageMetadata type from astro:assets
+}
+
+const { name, description, imageUrl } = Astro.props;
+---
+
+<div class="relative w-full rounded-2xl overflow-hidden mb-12 group">
+  <div class="aspect-video w-full bg-surface-dark relative">
+    <!-- Hero Image -->
+    <div class="absolute inset-0 overflow-hidden">
+      <Image
+        src={imageUrl}
+        alt={name}
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        width={1200}
+        height={675}
+        transition:name={`project-image-${name}`}
+      />
+    </div>
+    <!-- Gradient Overlay -->
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent"
+    >
+    </div>
+    <!-- Hero Content -->
+    <div class="absolute bottom-0 left-0 p-6 md:p-12 w-full">
+      <h1
+        class="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight leading-tight"
+        transition:name={`project-title-${name}`}
+      >
+        {name}
+      </h1>
+      <p
+        class="text-lg md:text-xl text-gray-300 max-w-2xl font-light leading-relaxed"
+      >
+        {description}
+      </p>
+    </div>
+  </div>
+</div>

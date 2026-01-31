@@ -1,0 +1,108 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/project/Breadcrumbs.astro";
+import ProjectHero from "../../components/project/ProjectHero.astro";
+import ProjectInfo from "../../components/project/ProjectInfo.astro";
+import ProjectContent from "../../components/project/ProjectContent.astro";
+import NextProject from "../../components/project/NextProject.astro";
+import { fetchGitHubRepos } from "../../services/github.ts";
+
+// Project assets
+import dashboardImg from "../../assets/projects/fintech-dashboard.png";
+import mobileImg from "../../assets/projects/mobile-app.png";
+import aiImg from "../../assets/projects/ai-chat.png";
+import landingImg from "../../assets/projects/saas-landing.png";
+import chatbotBanana from "../../assets/projects/chatbot-nanobanana.png";
+import csvViewerBanana from "../../assets/projects/csvviewer-nanobanana.png";
+
+export async function getStaticPaths() {
+  const repos = await fetchGitHubRepos("devlitus");
+  return repos.map((repo) => ({
+    params: { slug: repo.name },
+    props: { repo },
+  }));
+}
+
+// Get the project data from props (pre-fetched in getStaticPaths)
+const { repo } = Astro.props;
+
+// If repo not found, return 404
+if (!repo) {
+  return Astro.redirect("/404");
+}
+
+function getProjectImage(title: string) {
+  const lowerTitle = title.toLowerCase();
+
+  if (lowerTitle === "chatbot") {
+    return chatbotBanana;
+  } else if (lowerTitle === "csvviewer") {
+    return csvViewerBanana;
+  }
+
+  if (
+    lowerTitle.includes("nav") ||
+    lowerTitle.includes("mobile") ||
+    lowerTitle.includes("app")
+  ) {
+    return mobileImg;
+  } else if (
+    lowerTitle.includes("ai") ||
+    lowerTitle.includes("gpt") ||
+    lowerTitle.includes("bot")
+  ) {
+    return aiImg;
+  } else if (
+    lowerTitle.includes("web") ||
+    lowerTitle.includes("landing") ||
+    lowerTitle.includes("site")
+  ) {
+    return landingImg;
+  } else {
+    return dashboardImg;
+  }
+}
+
+const projectImage = getProjectImage(repo.name);
+---
+
+<Layout title={`${repo.name} - Project Detail`}>
+  <Header />
+  <main class="flex-grow w-full">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <Breadcrumbs projectName={repo.name} />
+      <ProjectHero
+        name={repo.name}
+        description={repo.description || "No description provided."}
+        imageUrl={projectImage}
+      />
+
+      <!-- Main Layout Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Left Column: Content Narrative -->
+        <div class="lg:col-span-8 space-y-16">
+          <ProjectContent
+            description={repo.description || "No description provided."}
+            topics={repo.topics}
+          />
+        </div>
+
+        <!-- Right Column: Project Info Sidebar -->
+        <div class="lg:col-span-4">
+          <ProjectInfo
+            createdAt={repo.created_at}
+            language={repo.language}
+            htmlUrl={repo.html_url}
+            homepageUrl={repo.homepage}
+            stars={repo.stargazers_count}
+          />
+        </div>
+      </div>
+
+      <NextProject currentProject={repo.name} />
+    </div>
+  </main>
+  <Footer />
+</Layout>

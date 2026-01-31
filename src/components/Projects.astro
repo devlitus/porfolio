@@ -1,0 +1,132 @@
+---
+import { fetchGitHubRepos } from '../services/github.ts';
+import type { Repository } from '../services/github.ts';
+import { Image } from 'astro:assets';
+
+// Import local images
+import dashboardImg from '../assets/projects/fintech-dashboard.png';
+import mobileImg from '../assets/projects/mobile-app.png';
+import aiImg from '../assets/projects/ai-chat.png';
+import landingImg from '../assets/projects/saas-landing.png';
+
+// Import custom Nano Banana images
+import chatbotBanana from '../assets/projects/chatbot-nanobanana.png';
+import csvViewerBanana from '../assets/projects/csvviewer-nanobanana.png';
+
+const repos = await fetchGitHubRepos('devlitus');
+
+function getProjectImage(title: string) {
+  const lowerTitle = title.toLowerCase();
+  
+  // Specific projects with custom images
+  if (lowerTitle === 'chatbot') {
+      return chatbotBanana;
+  } else if (lowerTitle === 'csvviewer') {
+      return csvViewerBanana;
+  }
+  
+  if (lowerTitle.includes('nav') || lowerTitle.includes('mobile') || lowerTitle.includes('app')) {
+      return mobileImg;
+  } else if (lowerTitle.includes('ai') || lowerTitle.includes('gpt') || lowerTitle.includes('bot')) {
+      return aiImg;
+  } else if (lowerTitle.includes('web') || lowerTitle.includes('landing') || lowerTitle.includes('site')) {
+      return landingImg;
+  } else {
+      // Default (Dashboard / Analytics look) for others
+      return dashboardImg;
+  }
+}
+
+function getLanguageColorClass(language: string | null): string {
+    const lang = language?.toLowerCase() || '';
+    if (lang === 'typescript' || lang === 'react') return 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300';
+    if (lang === 'javascript' || lang === 'python' || lang === 'node.js') return 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300';
+    if (lang === 'vue' || lang === 'c#') return 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300';
+    return 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300';
+}
+---
+
+<section
+  class="w-full max-w-[1280px] px-4 md:px-10 py-16 md:py-24 mx-auto"
+  id="projects"
+>
+  <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+    <div>
+      <h2 class="text-3xl font-bold tracking-tight mb-2">My Open Source Projects</h2>
+      <p class="text-gray-600 dark:text-gray-400">
+        Top repositories from <a href="https://github.com/devlitus" target="_blank" class="text-primary hover:underline">@devlitus</a>
+      </p>
+    </div>
+    <a
+      class="text-primary font-bold hover:underline flex items-center gap-1 group"
+      href="https://github.com/devlitus?tab=repositories"
+      target="_blank"
+    >
+      View all Repos
+      <span
+        class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1"
+        >arrow_forward</span
+      >
+    </a>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+    {repos.map((repo) => {
+        const image = getProjectImage(repo.name);
+        return (
+      <article class="group relative bg-white dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-primary/50 transition-all duration-300 flex flex-col h-full hover:shadow-xl hover:shadow-primary/5">
+        <a href={`/projects/${repo.name}`} class="flex flex-col flex-grow">
+          <!-- HEADER: Image -->
+          <div class="block w-full aspect-video bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
+              <Image 
+                  src={image} 
+                  alt={repo.name}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  width={800}
+                  height={450}
+                  transition:name={`project-image-${repo.name}`}
+              />
+          </div>
+          
+          <!-- BODY: Title & Description -->
+          <div class="p-6 flex-grow flex flex-col relative bg-white dark:bg-surface-dark group/body">
+              <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors" transition:name={`project-title-${repo.name}`}>
+                  {repo.name}
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-2">
+                  {repo.description || "No description provided."}
+              </p>
+          </div>
+        </a>
+        
+        <!-- FOOTER: Badges (Left) & CTA (Right) -->
+        <div class="px-6 pb-6 mt-auto">
+            <div class="pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                <div class="flex gap-2 items-center">
+                     {repo.language && (
+                        <span class={`px-3 py-1 rounded-full text-xs font-medium ${getLanguageColorClass(repo.language)}`}>
+                            {repo.language}
+                        </span>
+                     )}
+                     <span class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-medium flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[14px]">star</span> {repo.stargazers_count}
+                     </span>
+                </div>
+                
+                <a 
+                    href={repo.html_url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="flex items-center gap-1 text-sm font-bold text-gray-600 dark:text-gray-400 hover:text-primary transition-colors p-2 -m-2"
+                    aria-label="View on GitHub"
+                >
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.419-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+      </article>
+    )})}
+  </div>
+</section>

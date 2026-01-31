@@ -1,0 +1,97 @@
+---
+import { fetchGitHubRepos } from "../../services/github.ts";
+
+interface Props {
+  currentProject: string;
+}
+
+const { currentProject } = Astro.props;
+
+// Fetch all repos and find the next one
+const repos = await fetchGitHubRepos("devlitus");
+const currentIndex = repos.findIndex((repo) => repo.name === currentProject);
+const nextRepo = repos[(currentIndex + 1) % repos.length]; // Wrap around to first if at end
+
+// Import images for next project
+import dashboardImg from "../../assets/projects/fintech-dashboard.png";
+import mobileImg from "../../assets/projects/mobile-app.png";
+import aiImg from "../../assets/projects/ai-chat.png";
+import landingImg from "../../assets/projects/saas-landing.png";
+import chatbotBanana from "../../assets/projects/chatbot-nanobanana.png";
+import csvViewerBanana from "../../assets/projects/csvviewer-nanobanana.png";
+
+function getProjectImage(title: string) {
+  const lowerTitle = title.toLowerCase();
+
+  if (lowerTitle === "chatbot") {
+    return chatbotBanana;
+  } else if (lowerTitle === "csvviewer") {
+    return csvViewerBanana;
+  }
+
+  if (
+    lowerTitle.includes("nav") ||
+    lowerTitle.includes("mobile") ||
+    lowerTitle.includes("app")
+  ) {
+    return mobileImg;
+  } else if (
+    lowerTitle.includes("ai") ||
+    lowerTitle.includes("gpt") ||
+    lowerTitle.includes("bot")
+  ) {
+    return aiImg;
+  } else if (
+    lowerTitle.includes("web") ||
+    lowerTitle.includes("landing") ||
+    lowerTitle.includes("site")
+  ) {
+    return landingImg;
+  } else {
+    return dashboardImg;
+  }
+}
+
+const nextImage = getProjectImage(nextRepo.name);
+---
+
+<div class="mt-20 pt-10 border-t border-gray-200 dark:border-[#282e39]">
+  <div class="flex justify-between items-center mb-6">
+    <h4 class="text-sm uppercase tracking-widest text-gray-500 font-bold">
+      Next Project
+    </h4>
+  </div>
+  <a
+    class="group block relative rounded-2xl overflow-hidden bg-surface-dark border border-[#282e39] h-48 md:h-64"
+    href={`/projects/${nextRepo.name}`}
+  >
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src={nextImage.src}
+        alt={nextRepo.name}
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-60"
+      />
+    </div>
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent"
+    >
+    </div>
+    <div class="absolute inset-0 p-8 flex flex-col justify-center">
+      <span
+        class="text-primary font-mono text-sm mb-2 group-hover:translate-x-2 transition-transform duration-300"
+        >{((currentIndex + 1) % repos.length) + 1} / {repos.length}</span
+      >
+      <h3
+        class="text-3xl md:text-4xl font-bold text-white group-hover:translate-x-2 transition-transform duration-300 delay-75"
+      >
+        {nextRepo.name}
+      </h3>
+      <div
+        class="flex items-center gap-2 mt-4 text-gray-300 group-hover:translate-x-2 transition-transform duration-300 delay-100 group-hover:text-primary"
+      >
+        <span class="font-medium">View Project</span>
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </div>
+    </div>
+  </a>
+</div>

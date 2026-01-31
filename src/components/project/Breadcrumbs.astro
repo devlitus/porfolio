@@ -1,0 +1,27 @@
+---
+interface Props {
+  projectName: string;
+}
+
+const { projectName } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="flex mb-8">
+  <ol class="flex items-center space-x-2">
+    <li>
+      <a
+        class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium"
+        href="/">Projects</a
+      >
+    </li>
+    <li>
+      <span class="text-gray-400 text-sm">/</span>
+    </li>
+    <li
+      aria-current="page"
+      class="text-slate-900 dark:text-white text-sm font-medium"
+    >
+      {projectName}
+    </li>
+  </ol>
+</nav>
