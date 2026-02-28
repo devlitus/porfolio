@@ -16,16 +16,21 @@ const formattedDate = createdDate.toLocaleDateString("en-US", {
   year: "numeric",
 });
 
-// Language color mapping
+// Language color mapping - O(1) lookup
+const LANGUAGE_COLORS: Record<string, string> = {
+  typescript: "#3178C6",
+  javascript: "#F7DF1E",
+  python: "#3776AB",
+  html: "#E34F26",
+  astro: "#FF5D01",
+  "jupyter notebook": "#DA5B0B",
+};
+
+const DEFAULT_COLOR = "#6B7280";
+
 function getLanguageColor(lang: string | null): string {
-  const language = lang?.toLowerCase() || "";
-  if (language === "typescript") return "#3178C6";
-  if (language === "javascript") return "#F7DF1E";
-  if (language === "python") return "#3776AB";
-  if (language === "html") return "#E34F26";
-  if (language === "astro") return "#FF5D01";
-  if (language === "jupyter notebook") return "#DA5B0B";
-  return "#6B7280"; // gray default
+  if (!lang) return DEFAULT_COLOR;
+  return LANGUAGE_COLORS[lang.toLowerCase()] || DEFAULT_COLOR;
 }
 ---
 

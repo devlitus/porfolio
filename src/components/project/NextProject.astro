@@ -14,17 +14,15 @@ const nextRepo = repos[(currentIndex + 1) % repos.length]; // Wrap around to fir
 
 // Import images for next project
 import dashboardImg from "../../assets/projects/fintech-dashboard.png";
-import mobileImg from "../../assets/projects/mobile-app.png";
 import aiImg from "../../assets/projects/ai-chat.png";
 import landingImg from "../../assets/projects/saas-landing.png";
-import chatbotBanana from "../../assets/projects/chatbot-nanobanana.png";
 import csvViewerBanana from "../../assets/projects/csvviewer-nanobanana.png";
 
 function getProjectImage(title: string) {
   const lowerTitle = title.toLowerCase();
 
   if (lowerTitle === "chatbot") {
-    return chatbotBanana;
+    return dashboardImg; // Fallback safe
   } else if (lowerTitle === "csvviewer") {
     return csvViewerBanana;
   }
@@ -34,7 +32,7 @@ function getProjectImage(title: string) {
     lowerTitle.includes("mobile") ||
     lowerTitle.includes("app")
   ) {
-    return mobileImg;
+    return dashboardImg; // Fallback to dashboard until mobile-app is restored
   } else if (
     lowerTitle.includes("ai") ||
     lowerTitle.includes("gpt") ||

@@ -4,7 +4,7 @@
 
 <section class="w-full max-w-[960px] px-4 md:px-10 py-16 mx-auto" id="timeline">
   <h2 class="text-3xl font-bold tracking-tight mb-12 text-center">
-    Career Timeline
+    Trayectoria Profesional
   </h2>
   <div class="relative">
     <!-- Vertical Line -->
@@ -13,93 +13,127 @@
     >
     </div>
     <div class="flex flex-col gap-8 md:gap-12">
-      <!-- Timeline Item 1 -->
-      <div
-        class="relative flex flex-col md:flex-row items-start md:items-center w-full group"
-      >
-        <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-2 md:mb-0">
-          <span
-            class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2"
-            >2023 - Present</span
-          >
-          <h3 class="text-lg font-bold">Senior Full Stack Developer</h3>
-          <p class="text-gray-500 dark:text-gray-400 text-sm">TechCorp Inc.</p>
-          <p
-            class="text-gray-600 dark:text-gray-400 text-sm mt-2 hidden md:block"
-          >
-            Leading the frontend team, migrating legacy systems to React, and
-            implementing CI/CD pipelines.
-          </p>
-        </div>
-        <!-- Dot -->
-        <div
-          class="absolute left-4 md:left-1/2 -translate-x-[5px] md:-translate-x-1/2 size-3 rounded-full bg-primary border-4 border-white dark:border-background-dark shadow-[0_0_0_2px_rgba(19,91,236,0.3)] z-10"
-        >
-        </div>
-        <div class="md:w-1/2 md:pl-12 pl-12">
-          <p class="text-gray-600 dark:text-gray-400 text-sm md:hidden block">
-            Leading the frontend team, migrating legacy systems to React, and
-            implementing CI/CD pipelines.
-          </p>
-        </div>
-      </div>
-      <!-- Timeline Item 2 -->
-      <div
-        class="relative flex flex-col md:flex-row items-start md:items-center w-full group"
-      >
-        <div
-          class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 hidden md:block"
-        >
-          <!-- Spacer for left side on desktop -->
-        </div>
-        <!-- Dot -->
-        <div
-          class="absolute left-4 md:left-1/2 -translate-x-[5px] md:-translate-x-1/2 size-3 rounded-full bg-gray-400 dark:bg-gray-600 border-4 border-white dark:border-background-dark z-10 group-hover:bg-primary transition-colors"
-        >
-        </div>
-        <div class="md:w-1/2 md:pl-12 pl-12 mb-2 md:mb-0">
-          <span
-            class="inline-block py-1 px-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-bold mb-2"
-            >2021 - 2023</span
-          >
-          <h3 class="text-lg font-bold">Frontend Developer</h3>
-          <p class="text-gray-500 dark:text-gray-400 text-sm">CreativeAgency</p>
-          <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">
-            Developed interactive websites for high-profile clients, ensuring
-            cross-browser compatibility and accessibility.
-          </p>
-        </div>
-      </div>
-      <!-- Timeline Item 3 -->
-      <div
-        class="relative flex flex-col md:flex-row items-start md:items-center w-full group"
-      >
-        <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-2 md:mb-0">
-          <span
-            class="inline-block py-1 px-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-bold mb-2"
-            >2019 - 2021</span
-          >
-          <h3 class="text-lg font-bold">Freelance Web Developer</h3>
-          <p class="text-gray-500 dark:text-gray-400 text-sm">Self Employed</p>
-          <p
-            class="text-gray-600 dark:text-gray-400 text-sm mt-2 hidden md:block"
-          >
-            Delivered over 20+ web projects for small businesses, managing the
-            entire lifecycle from design to deployment.
-          </p>
-        </div>
-        <!-- Dot -->
-        <div
-          class="absolute left-4 md:left-1/2 -translate-x-[5px] md:-translate-x-1/2 size-3 rounded-full bg-gray-400 dark:bg-gray-600 border-4 border-white dark:border-background-dark z-10 group-hover:bg-primary transition-colors"
-        >
-        </div>
-        <div class="md:w-1/2 md:pl-12 pl-12">
-          <p class="text-gray-600 dark:text-gray-400 text-sm md:hidden block">
-            Delivered over 20+ web projects for small businesses, managing the
-            entire lifecycle from design to deployment.
-          </p>
-        </div>
-      </div>
+      {
+        [
+          {
+            role: "Frontend Developer",
+            company: "QUABU",
+            location: "Vilanova i la Geltrú",
+            period: "Actualidad",
+            description:
+              "Analista y técnico de software Frontend. Desarrollo website y móvil.",
+            stack: "React, React Native, HTML, CSS, Javascript",
+          },
+          {
+            role: "Developer",
+            company: "MQXCHIPS",
+            location: "Vilanova i la Geltrú",
+            period: "Previo",
+            description:
+              "Analista y técnico de software. Desarrollo website tienda online.",
+            stack: "Wordpress",
+          },
+          {
+            role: "Freelance Developer",
+            company: "Propia",
+            location: "",
+            period: "Previo",
+            description:
+              "Desarrollo app tienda online, sistema de login, dashboard y CRUD.",
+            stack: "Angular 6, Bootstrap 4, Jquery, Slim framework, PHP 7",
+          },
+          {
+            role: "Freelance Developer",
+            company: "Propia",
+            location: "",
+            period: "Previo",
+            description:
+              "Desarrollo web promoción sala de fiestas y sistema de alquiler.",
+            stack: "Wordpress, PHP 7, MySQL, HTML5, CSS3",
+          },
+          {
+            role: "Software Technician",
+            company: "SPOTLIO",
+            location: "Vilanova i la Geltrú",
+            period: "Previo",
+            description:
+              "Aplicación móvil con información de servicios de la ciudad.",
+            stack: "Ionic 3, Typescript, SASS, HTML5",
+          },
+          {
+            role: "Developer",
+            company: "OFFING",
+            location: "Vilanova i la Geltrú",
+            period: "Previo",
+            description:
+              "Analista y técnico de software. Desarrollo en múltiples proyectos.",
+            stack: "Symfony 3, PHP 7, MySQL, jQuery",
+          },
+          {
+            role: "Developer",
+            company: "DOBLE J INFORMATICA",
+            location: "Vilanova i la Geltrú",
+            period: "Previo",
+            description: "Mejoras y mantenimiento de website e-commerce.",
+            stack: "Wordpress",
+          },
+        ].map((item, index) => (
+          <div class="relative flex flex-col md:flex-row items-start md:items-center w-full group">
+            {/* Left Side Content (for even items) */}
+            <div
+              class={`md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-2 md:mb-0 ${index % 2 !== 0 ? "hidden md:block md:invisible" : ""}`}
+            >
+              {index % 2 === 0 && (
+                <>
+                  <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">
+                    {item.company} | {item.location || "Remoto"}
+                  </span>
+                  <h3 class="text-lg font-bold">{item.role}</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm italic mb-2">
+                    {item.stack}
+                  </p>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm hidden md:block">
+                    {item.description}
+                  </p>
+                </>
+              )}
+            </div>
+
+            {/* Dot */}
+            <div
+              class={`absolute left-4 md:left-1/2 -translate-x-[5px] md:-translate-x-1/2 size-3 rounded-full border-4 border-white dark:border-background-dark z-10 transition-colors ${index === 0 ? "bg-primary shadow-[0_0_0_2px_rgba(19,91,236,0.3)]" : "bg-gray-400 dark:bg-gray-600 group-hover:bg-primary"}`}
+            ></div>
+
+            {/* Right Side Content (for odd items) */}
+            <div
+              class={`md:w-1/2 md:pl-12 pl-12 ${index % 2 === 0 ? "" : "mb-2 md:mb-0"}`}
+            >
+              {/* Mobile View for Even Items (Duplicate content) */}
+              {index % 2 === 0 && (
+                <p class="text-gray-600 dark:text-gray-400 text-sm md:hidden block">
+                  {item.description}
+                </p>
+              )}
+
+              {/* Desktop/Mobile View for Odd Items */}
+              {index % 2 !== 0 && (
+                <>
+                  <span class="inline-block py-1 px-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-bold mb-2">
+                    {item.company} | {item.location || "Remoto"}
+                  </span>
+                  <h3 class="text-lg font-bold">{item.role}</h3>
+                  <p class="text-gray-500 dark:text-gray-400 text-sm italic mb-2">
+                    {item.stack}
+                  </p>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    {item.description}
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

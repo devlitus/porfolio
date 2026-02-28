@@ -1,48 +1,56 @@
 ---
 import { fetchGitHubRepos } from '../services/github.ts';
-import type { Repository } from '../services/github.ts';
 import { Image } from 'astro:assets';
 
 // Import local images
 import dashboardImg from '../assets/projects/fintech-dashboard.png';
-import mobileImg from '../assets/projects/mobile-app.png';
 import aiImg from '../assets/projects/ai-chat.png';
 import landingImg from '../assets/projects/saas-landing.png';
 
 // Import custom Nano Banana images
-import chatbotBanana from '../assets/projects/chatbot-nanobanana.png';
+
 import csvViewerBanana from '../assets/projects/csvviewer-nanobanana.png';
+import galleryImageSD from '../assets/projects/gallery-image-sd.png';
 
 const repos = await fetchGitHubRepos('devlitus');
+
+// --- ADA REFACTOR: Optimization Logic (O(1) & Regex) ---
+// 1. O(1) Hash Map instead of O(N) chained if-else
+const LANGUAGE_COLORS: Record<string, string> = {
+  typescript: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300',
+  react: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300',
+  javascript: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300',
+  python: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300',
+  'node.js': 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300',
+  vue: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300',
+  'c#': 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300',
+};
+
+const DEFAULT_COLOR = 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300';
+// 
+function getLanguageColorClass(language: string | null): string {
+  if (!language) return DEFAULT_COLOR;
+  return LANGUAGE_COLORS[language.toLowerCase()] || DEFAULT_COLOR;
+}
+
+// 2. Precompiled Regex for faster pattern matching
+const mobileAppRegex = /nav|mobile|app/i;
+const aiBotRegex = /ai|gpt|bot/i;
+const landingWebRegex = /web|landing|site/i;
 
 function getProjectImage(title: string) {
   const lowerTitle = title.toLowerCase();
   
-  // Specific projects with custom images
-  if (lowerTitle === 'chatbot') {
-      return chatbotBanana;
-  } else if (lowerTitle === 'csvviewer') {
-      return csvViewerBanana;
-  }
+  // Specific O(1) lookups
+  if (lowerTitle === 'csvviewer') return csvViewerBanana;
+  if (lowerTitle === 'galleryimagesd') return galleryImageSD;
   
-  if (lowerTitle.includes('nav') || lowerTitle.includes('mobile') || lowerTitle.includes('app')) {
-      return mobileImg;
-  } else if (lowerTitle.includes('ai') || lowerTitle.includes('gpt') || lowerTitle.includes('bot')) {
-      return aiImg;
-  } else if (lowerTitle.includes('web') || lowerTitle.includes('landing') || lowerTitle.includes('site')) {
-      return landingImg;
-  } else {
-      // Default (Dashboard / Analytics look) for others
-      return dashboardImg;
-  }
-}
-
-function getLanguageColorClass(language: string | null): string {
-    const lang = language?.toLowerCase() || '';
-    if (lang === 'typescript' || lang === 'react') return 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300';
-    if (lang === 'javascript' || lang === 'python' || lang === 'node.js') return 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300';
-    if (lang === 'vue' || lang === 'c#') return 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300';
-    return 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300';
+  // Fast Regex matching (evaluated down to C++ engine in V8)
+  if (mobileAppRegex.test(lowerTitle)) return dashboardImg; // Fallback for missing mobile-app.png
+  if (aiBotRegex.test(lowerTitle)) return aiImg;
+  if (landingWebRegex.test(lowerTitle)) return landingImg;
+  
+  return dashboardImg;
 }
 ---
 
