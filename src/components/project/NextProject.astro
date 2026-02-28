@@ -12,41 +12,35 @@ const repos = await fetchGitHubRepos("devlitus");
 const currentIndex = repos.findIndex((repo) => repo.name === currentProject);
 const nextRepo = repos[(currentIndex + 1) % repos.length]; // Wrap around to first if at end
 
-// Import images for next project
+// Import our new 6 project images
+import imgChat from "../../assets/projects/project-chat.png";
+import imgCsv from "../../assets/projects/project-csvviewer.png";
+import imgGallery from "../../assets/projects/project-gallery.png";
+import imgDeep from "../../assets/projects/project-deeplearning.png";
+import imgTravel from "../../assets/projects/project-travel.png";
+import imgAinglish from "../../assets/projects/project-ainglish.png";
+
+// Fallback just in case
 import dashboardImg from "../../assets/projects/fintech-dashboard.png";
-import aiImg from "../../assets/projects/ai-chat.png";
-import landingImg from "../../assets/projects/saas-landing.png";
-import csvViewerBanana from "../../assets/projects/csvviewer-nanobanana.png";
 
 function getProjectImage(title: string) {
   const lowerTitle = title.toLowerCase();
 
-  if (lowerTitle === "chatbot") {
-    return dashboardImg; // Fallback safe
-  } else if (lowerTitle === "csvviewer") {
-    return csvViewerBanana;
-  }
-
-  if (
-    lowerTitle.includes("nav") ||
-    lowerTitle.includes("mobile") ||
-    lowerTitle.includes("app")
-  ) {
-    return dashboardImg; // Fallback to dashboard until mobile-app is restored
-  } else if (
-    lowerTitle.includes("ai") ||
-    lowerTitle.includes("gpt") ||
-    lowerTitle.includes("bot")
-  ) {
-    return aiImg;
-  } else if (
-    lowerTitle.includes("web") ||
-    lowerTitle.includes("landing") ||
-    lowerTitle.includes("site")
-  ) {
-    return landingImg;
-  } else {
-    return dashboardImg;
+  switch (lowerTitle) {
+    case "chat":
+      return imgChat;
+    case "csvviewer":
+      return imgCsv;
+    case "galleryimagesd":
+      return imgGallery;
+    case "repos-deep-learning":
+      return imgDeep;
+    case "travel-web":
+      return imgTravel;
+    case "ainglish":
+      return imgAinglish;
+    default:
+      return dashboardImg;
   }
 }
 

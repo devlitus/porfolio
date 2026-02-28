@@ -2,15 +2,16 @@
 import { fetchGitHubRepos } from '../services/github.ts';
 import { Image } from 'astro:assets';
 
-// Import local images
+// Import our new 6 project images
+import imgChat from '../assets/projects/project-chat.png';
+import imgCsv from '../assets/projects/project-csvviewer.png';
+import imgGallery from '../assets/projects/project-gallery.png';
+import imgDeep from '../assets/projects/project-deeplearning.png';
+import imgTravel from '../assets/projects/project-travel.png';
+import imgAinglish from '../assets/projects/project-ainglish.png';
+
+// Fallback just in case
 import dashboardImg from '../assets/projects/fintech-dashboard.png';
-import aiImg from '../assets/projects/ai-chat.png';
-import landingImg from '../assets/projects/saas-landing.png';
-
-// Import custom Nano Banana images
-
-import csvViewerBanana from '../assets/projects/csvviewer-nanobanana.png';
-import galleryImageSD from '../assets/projects/gallery-image-sd.png';
 
 const repos = await fetchGitHubRepos('devlitus');
 
@@ -33,24 +34,25 @@ function getLanguageColorClass(language: string | null): string {
   return LANGUAGE_COLORS[language.toLowerCase()] || DEFAULT_COLOR;
 }
 
-// 2. Precompiled Regex for faster pattern matching
-const mobileAppRegex = /nav|mobile|app/i;
-const aiBotRegex = /ai|gpt|bot/i;
-const landingWebRegex = /web|landing|site/i;
-
 function getProjectImage(title: string) {
   const lowerTitle = title.toLowerCase();
-  
-  // Specific O(1) lookups
-  if (lowerTitle === 'csvviewer') return csvViewerBanana;
-  if (lowerTitle === 'galleryimagesd') return galleryImageSD;
-  
-  // Fast Regex matching (evaluated down to C++ engine in V8)
-  if (mobileAppRegex.test(lowerTitle)) return dashboardImg; // Fallback for missing mobile-app.png
-  if (aiBotRegex.test(lowerTitle)) return aiImg;
-  if (landingWebRegex.test(lowerTitle)) return landingImg;
-  
-  return dashboardImg;
+
+  switch (lowerTitle) {
+    case "chat":
+      return imgChat;
+    case "csvviewer":
+      return imgCsv;
+    case "galleryimagesd":
+      return imgGallery;
+    case "repos-deep-learning":
+      return imgDeep;
+    case "travel-web":
+      return imgTravel;
+    case "ainglish":
+      return imgAinglish;
+    default:
+      return dashboardImg;
+  }
 }
 ---
 
