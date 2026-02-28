@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Developer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-dark": "#1a2230",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scrolling sections */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-white">
+<div class="relative flex flex-col min-h-screen w-full">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-[#e5e7eb] dark:border-[#282e39] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="px-4 md:px-10 py-4 flex items-center justify-between max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight">DevPortfolio</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#projects">Projects</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#timeline">Timeline</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#reviews">Reviews</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#services">Services</a>
+<a class="bg-primary text-white text-sm font-bold px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors" href="#contact">Contact</a>
+</nav>
+<div class="md:hidden">
+<button class="text-gray-600 dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center w-full">
+<!-- Hero Section -->
+<section class="w-full max-w-[1280px] px-4 md:px-10 py-12 md:py-20 flex flex-col justify-center">
+<div class="flex flex-col-reverse lg:flex-row items-center gap-12">
+<div class="flex flex-col gap-6 lg:w-1/2">
+<div class="flex flex-col gap-4 text-left">
+<span class="text-primary font-bold tracking-wider uppercase text-sm">Full Stack Developer</span>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight">
+                                Building digital <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">experiences</span> that matter
+                            </h1>
+<p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed max-w-lg">
+                                Hi, I'm Alex. I specialize in modern web technologies, creating pixel-perfect, performant, and accessible applications.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-4 pt-2">
+<a class="flex cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-base font-bold transition-all hover:bg-blue-700 hover:shadow-lg hover:shadow-primary/30" href="#projects">
+                                View Work
+                            </a>
+<a class="flex cursor-pointer items-center justify-center rounded-lg h-12 px-8 border border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-primary text-gray-800 dark:text-white text-base font-bold bg-transparent transition-all" href="#contact">
+                                Contact Me
+                            </a>
+</div>
+<div class="flex items-center gap-4 mt-4 text-sm text-gray-500 dark:text-gray-500">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full bg-cover bg-center border-2 border-background-light dark:border-background-dark" data-alt="Portrait of a young professional woman" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdLHiL8_tzdy-CaJlMcP3t6h7xYNxvQDcfpDXdFKL4sXFFHL4s6Im9PeotuWp0QVL8XU-yqxUvd8i1bGx9nIugyW0Qn1Cy72NbSOZqbkVpMSfvFR-PLrUOaBV2L5xgcAEKpQokM-5CnlnN9rite2_tsdiVL-M6ZWGSPi9E_ENNA5UdI80C0zPjjToXtIBTlVxMTirprEW7drKSwLrpiYFm6eL7vIGq47Q0nzaf5V3moy0f7WRyix019HGpUX47SCC-uPq5qfz_Cs8");'></div>
+<div class="size-8 rounded-full bg-cover bg-center border-2 border-background-light dark:border-background-dark" data-alt="Portrait of a man with glasses" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBqc1rGnW25aRqCqVIUQwQghrRmnkrZE4Ejk0fjL6zgEyd4WvUQea96vr4rRIN5fJH_3bdmZ4Y2iDSAZdzV4AeXZVRZFntF_rXKvMlJGQdGP-SrzMm1llEfvd1Tr8fBGuiVVN-tmcb72iDC9aefOdPkRkgl4Lc23AUZ6d4yzx5isACSbApAFd8uwUqOEfkrf-xE4L1DCvpCsVC4CiheL4IwTj6dJrj0l68BpBn3cNq9FUTp8Bh57Am2JAZXyhenouvSSmmF0IJLy2I");'></div>
+<div class="size-8 rounded-full bg-cover bg-center border-2 border-background-light dark:border-background-dark" data-alt="Portrait of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBi4Ny-I04OxT-hTPvy13DqRGnieTzC1RGDQc1Z109SF-Kdv9qhsqjE5q_SCXIU5KVZGFsXgbbPUu46G_j5bA3iQ0YjPhrD-3i1OzVL8fRMSMh_9ugQofZlSiBR7RS8RQ6VPC_-M4ixpU_r89o-QM6t6dnHyJJ9gzDTGwns4EI6ua1-gSvN7nL6fTKvaqOc4NzHkalGDIU-s6bUwBOdERmutF8qfjIUhG9J61J88xELelNaH4K9iRWZiWQ3nx5UdLTRu9J8X-UEWvg");'></div>
+</div>
+<span>Trusted by 50+ clients worldwide</span>
+</div>
+</div>
+<div class="lg:w-1/2 w-full">
+<div class="relative w-full aspect-square md:aspect-video lg:aspect-square bg-gradient-to-tr from-primary/20 via-background-dark to-background-dark rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800">
+<div class="absolute inset-0 bg-cover bg-center opacity-80 mix-blend-overlay" data-alt="Close up of computer code on a dark screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB90DrXFrGKi7jpaSgOgdZ_ZGjqiBsv8YS1aGwIe3PFeUHoNK8j40s9BtiBt--QFXddQqMEUHN9bILCIn6HYbx1Rdr_f3WO4m0Iz-usgwsiOcRXAcHw1i0asI54hDmHtvx_poLfXuRUfsHKVvcsMMOx3K90CTWG7lfvz0dIYn2s7GVKCOyIrZENggz3cyViPAO-E9gZThGabBIflA54K-pGx75e3LlxGPMkidTDRQaN2zWuFLmb-02Vn-PpWIhyWdOmI522qnXWMww");'></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-surface-light/10 dark:bg-surface-dark/40 backdrop-blur-xl border border-white/10 p-6 rounded-xl shadow-2xl max-w-xs w-full transform rotate-3 hover:rotate-0 transition-transform duration-500">
+<div class="flex items-center gap-3 mb-4">
+<div class="size-3 rounded-full bg-red-500"></div>
+<div class="size-3 rounded-full bg-yellow-500"></div>
+<div class="size-3 rounded-full bg-green-500"></div>
+</div>
+<div class="space-y-2">
+<div class="h-2 w-3/4 bg-gray-400/30 rounded"></div>
+<div class="h-2 w-1/2 bg-gray-400/30 rounded"></div>
+<div class="h-2 w-5/6 bg-gray-400/30 rounded"></div>
+<div class="h-2 w-full bg-primary/60 rounded mt-4"></div>
+<div class="h-2 w-2/3 bg-primary/60 rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="w-full max-w-[1280px] px-4 md:px-10 py-16 md:py-24" id="projects">
+<div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+<div>
+<h2 class="text-3xl font-bold tracking-tight mb-2">Selected Projects</h2>
+<p class="text-gray-600 dark:text-gray-400">A showcase of my recent technical work.</p>
+</div>
+<a class="text-primary font-bold hover:underline flex items-center gap-1 group" href="#">
+                        View all projects 
+                        <span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+<!-- Project 1 -->
+<div class="group relative bg-white dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-primary/50 transition-colors">
+<div class="w-full aspect-video bg-gray-200 dark:bg-gray-800 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Modern analytics dashboard interface on a laptop screen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALo_sV9uSAs0ldABT3YINejfWgq9WlAtT3xz0TCWC3bPVKz0184_cFkJ35rtCXd7VPk1KAggMCoLCQbArioUv4xD1OERxINDfV3_v8dSpjYpmXBscM8DSJOwumIzHRqlg7ZF_uYsq2O2sfQfz0IHg4LGEIeohLcaFADoEjZ_9da5ArNnCTaer6qH4x99bzqSWdQq5Os8_nXGjYW98R9quO2m2AfBd2x4e9QKwFghRXncP7FqZvxeMgO-LcuxMJUvKOS9aozzVs5Tw");'></div>
+<div class="p-6 relative bg-white dark:bg-surface-dark">
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">E-Commerce Dashboard</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">A comprehensive analytics dashboard for online retailers featuring real-time data visualization and inventory management.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium">React</span>
+<span class="px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-medium">Node.js</span>
+<span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium">MongoDB</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative bg-white dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-primary/50 transition-colors">
+<div class="w-full aspect-video bg-gray-200 dark:bg-gray-800 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Financial data charts and graphs on a mobile device" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdstUs4YZHVBebFmisKmTdwcts3C1tSI9re13KX7JVEOhTx_L1QXCI93H5pUGphBk25cTIj0hC9JsYJfy1WPkuE3zrQq3tMrDZO8xmrr06M5gdQbLSDcHAylndywR8F03HhQxyZQgzBYJe9IRKwZGztZGUcM9paNbLpuS1CMirhllxZ1CxzIL7XdP_tqJQcnMhj_8vHQNsHQi7MR4sM0MwbmnCy_QR69NF2x-wtntnP8UKeLoXWwg1OT0PnZRsDn21uprSaMPJsvM");'></div>
+<div class="p-6 relative bg-white dark:bg-surface-dark">
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Fintech Mobile App</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Secure mobile banking application allowing users to track expenses, transfer funds, and manage investments on the go.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-medium">React Native</span>
+<span class="px-3 py-1 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 text-xs font-medium">Firebase</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group relative bg-white dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-primary/50 transition-colors">
+<div class="w-full aspect-video bg-gray-200 dark:bg-gray-800 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Abstract representation of artificial intelligence network" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_dxzSTLPF-h-vlLYjaRLDgoJ8bt4ejm635u4ZjpuAJUflja7KjzGJ2C_2U_lyq2cdxLgdx58AiyMiVGhy5_T3MKrs6qcLLhRAP3lnQNhF5pxpmGoLNKnvW-DjvZbtDDsJAQWgEA9k3TKWOk6yUy5OldB0SO7Gkv51ZT-eNlcu8uinK67UwgKMmPL_OU80k_UAKyVXLGQS9FweVHmdodI4alLf6N6TsfdD4Ya9VqLL8Ho2VdZ2Pk_0WeIG3hUQ9SiPdWzGpHTSZZI");'></div>
+<div class="p-6 relative bg-white dark:bg-surface-dark">
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">AI Chat Interface</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">Conversational UI integrating OpenAI's API to provide intelligent customer support and automated responses.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-medium">Python</span>
+<span class="px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 text-xs font-medium">OpenAI API</span>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group relative bg-white dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-primary/50 transition-colors">
+<div class="w-full aspect-video bg-gray-200 dark:bg-gray-800 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist website layout on a desktop monitor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLc5gy5inwNUFqCoMDZsqnlj6dMmw94cYi7coZU5XlDeKJtZEJUngbt6_WlSuD5IFkmZJ0gcHlDOr5HaMch1USWSH5xOiaCgkdnXPq02NWkoyo4qSCXduoFXmNaq14L-lHIJ62dqVwXiyaFl5ZnhVgA73lrlBrZuKc_OBb-WJy4GwX-VAo835mh-de9FhrfvYM_oiw-Z3M3MDHKHmlw4kJgJKV5N4MtepadgFsWf8IY-Y2s8Y7iuUclk3nwUo5AGjp2q7Gl1-xmms");'></div>
+<div class="p-6 relative bg-white dark:bg-surface-dark">
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">SaaS Landing Page</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">High-conversion landing page for a SaaS product, optimized for SEO and performance with a modern aesthetic.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 text-xs font-medium">Next.js</span>
+<span class="px-3 py-1 rounded-full bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 text-xs font-medium">Tailwind CSS</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="w-full max-w-[960px] px-4 md:px-10 py-16" id="timeline">
+<h2 class="text-3xl font-bold tracking-tight mb-12 text-center">Career Timeline</h2>
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800 transform md:-translate-x-1/2"></div>
+<div class="flex flex-col gap-8 md:gap-12">
+<!-- Timeline Item 1 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center w-full group">
+<div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-2 md:mb-0">
+<span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">2023 - Present</span>
+<h3 class="text-lg font-bold">Senior Full Stack Developer</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm">TechCorp Inc.</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm mt-2 hidden md:block">Leading the frontend team, migrating legacy systems to React, and implementing CI/CD pipelines.</p>
+</div>
+<!-- Dot -->
+<div class="absolute left-4 md:left-1/2 -translate-x-[5px] md:-translate-x-1/2 size-3 rounded-full bg-primary border-4 border-white dark:border-background-dark shadow-[0_0_0_2px_rgba(19,91,236,0.3)] z-10"></div>
+<div class="md:w-1/2 md:pl-12 pl-12">
+<p class="text-gray-600 dark:text-gray-400 text-sm md:hidden block">Leading the frontend team, migrating legacy systems to React, and implementing CI/CD pipelines.</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center w-full group">
+<div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 hidden md:block">
+<!-- Spacer for left side on desktop -->
+</div>
+<!-- Dot -->
+<div class="absolute left-4 md:left-1/2 -translate-x-[5px] md:-translate-x-1/2 size-3 rounded-full bg-gray-400 dark:bg-gray-600 border-4 border-white dark:border-background-dark z-10 group-hover:bg-primary transition-colors"></div>
+<div class="md:w-1/2 md:pl-12 pl-12 mb-2 md:mb-0">
+<span class="inline-block py-1 px-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-bold mb-2">2021 - 2023</span>
+<h3 class="text-lg font-bold">Frontend Developer</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm">CreativeAgency</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm mt-2">Developed interactive websites for high-profile clients, ensuring cross-browser compatibility and accessibility.</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center w-full group">
+<div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-2 md:mb-0">
+<span class="inline-block py-1 px-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-bold mb-2">2019 - 2021</span>
+<h3 class="text-lg font-bold">Freelance Web Developer</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Self Employed</p>
+<p class="text-gray-600 dark:text-gray-400 text-sm mt-2 hidden md:block">Delivered over 20+ web projects for small businesses, managing the entire lifecycle from design to deployment.</p>
+</div>
+<!-- Dot -->
+<div class="absolute left-4 md:left-1/2 -translate-x-[5px] md:-translate-x-1/2 size-3 rounded-full bg-gray-400 dark:bg-gray-600 border-4 border-white dark:border-background-dark z-10 group-hover:bg-primary transition-colors"></div>
+<div class="md:w-1/2 md:pl-12 pl-12">
+<p class="text-gray-600 dark:text-gray-400 text-sm md:hidden block">Delivered over 20+ web projects for small businesses, managing the entire lifecycle from design to deployment.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="w-full bg-white dark:bg-surface-dark border-y border-gray-100 dark:border-gray-800" id="reviews">
+<div class="max-w-[1280px] px-4 md:px-10 py-16 md:py-24 mx-auto">
+<h2 class="text-3xl font-bold tracking-tight mb-10">Client Reviews</h2>
+<div class="flex overflow-x-auto gap-6 pb-8 scrollbar-hide snap-x snap-mandatory">
+<!-- Review Card 1 -->
+<div class="snap-start min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-background-dark p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-cover bg-center" data-alt="Headshot of Sarah Johnson" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnLegR9HbF1TeIMkXIF-4tKWBCCHt7VPi1xYpi1pwOkXDYiEobowR1Utlga0GfNQ4M4nKLMU1S28GD4LqhiJ82wuo5T4TFFSFzGouCW2bXWAa8p1Sq_RxWQJ61soGrTd7Q4RqPjNx2LLFO1rRQ7fqWjglyu_KJMDibfq4r9L4OOOrtZm98AcskqDFMQJoN3x_cC5agiXAZh0sRkqURXLoIfj_969DhoiqdIv5SEu15J5ggWBCuXnUG6zesg8BEKnfCly_n_CiNwsI");'></div>
+<div>
+<h4 class="font-bold text-base">Sarah Johnson</h4>
+<p class="text-xs text-gray-500 uppercase tracking-wide">CEO, StartUp Inc</p>
+</div>
+</div>
+<div class="text-primary text-xl">
+<span class="material-symbols-outlined">format_quote</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 italic text-sm leading-relaxed">
+                                "The attention to detail and ability to translate complex requirements into a seamless user interface was impressive. Highly recommended!"
+                            </p>
+</div>
+<!-- Review Card 2 -->
+<div class="snap-start min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-background-dark p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-cover bg-center" data-alt="Headshot of Mike Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDj11zezRUao4MUcAGpgaAG750xHDpT5z2Z5t4Q9slkLi8y6_ogqx9seUPuWuTQ_8KZPvq66xi2DHDwe_H5iAdfL-sGwqlfwU3z5oan3dAlrVD_yo2Q1dtjX-Cv7RAkaEfGPfcq5CWr6jKc_7Zv2264hSXMuyKFpLo_Xn_C5Sd03KKPcjnm99jBB1UsbEStnkCn1FGLwhR6yFGI_LltOlZ7VdmIFJcoK8QV6bd3oW-brq4vRiE9-M9eMTUWwQbMGxLrraTCKmdQihY");'></div>
+<div>
+<h4 class="font-bold text-base">Mike Chen</h4>
+<p class="text-xs text-gray-500 uppercase tracking-wide">CTO, Fintech Solutions</p>
+</div>
+</div>
+<div class="text-primary text-xl">
+<span class="material-symbols-outlined">format_quote</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 italic text-sm leading-relaxed">
+                                "Incredible code quality and problem-solving skills. Delivered the project ahead of schedule and the post-launch support was phenomenal."
+                            </p>
+</div>
+<!-- Review Card 3 -->
+<div class="snap-start min-w-[300px] md:min-w-[400px] bg-background-light dark:bg-background-dark p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-cover bg-center" data-alt="Headshot of Emily Roberts" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBadWhgEW_R6h7wFvy1wg4riE7OKbanlpwmPI3RBSnuTQk-AjWJ_OQUY4Ppsl61GHNS_yOanPUGH7rdSFy80qWnLRFaf_nMiMWLoLEdfWY2BU7hU_NtzEn08aDPIYZ4-GdKhzL3GKaudEn5opbC0BvYSoMhw2L6Yn3thwF024NV9Gx5mGtYz6Y-zBUm8yEllLkkpcmnX3htNDg6gz5QiRWYyVdxSx7cZPcv0_N4bPJhI1-BJX1J_tsUFZKK9xoCtRrZCn7ORWBH2IA");'></div>
+<div>
+<h4 class="font-bold text-base">Emily Roberts</h4>
+<p class="text-xs text-gray-500 uppercase tracking-wide">Product Manager</p>
+</div>
+</div>
+<div class="text-primary text-xl">
+<span class="material-symbols-outlined">format_quote</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 italic text-sm leading-relaxed">
+                                "Communication was clear throughout the entire process. The final product exceeded our expectations in both design and functionality."
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="w-full max-w-[1280px] px-4 md:px-10 py-16 md:py-24" id="services">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 class="text-3xl font-bold tracking-tight mb-4">Services</h2>
+<p class="text-gray-600 dark:text-gray-400">Tailored development solutions to help your business grow.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Service 1 -->
+<div class="bg-white dark:bg-surface-dark p-8 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-primary/50 transition-all hover:shadow-lg dark:hover:shadow-primary/5">
+<div class="size-12 rounded-lg bg-blue-100 dark:bg-blue-900/20 text-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">code</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Frontend Development</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Responsive, interactive user interfaces built with modern frameworks.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> React / Vue.js
+                            </li>
+<li class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> Responsive Design
+                            </li>
+<li class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> Performance Optimization
+                            </li>
+</ul>
+</div>
+<!-- Service 2 -->
+<div class="bg-white dark:bg-surface-dark p-8 rounded-2xl border border-primary ring-1 ring-primary/20 relative">
+<div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPULAR</div>
+<div class="size-12 rounded-lg bg-blue-100 dark:bg-blue-900/20 text-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">layers</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Full Stack MVP</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Complete product development from idea to launch.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> Database Design
+                            </li>
+<li class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> API Development
+                            </li>
+<li class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> Authentication &amp; Security
+                            </li>
+</ul>
+</div>
+<!-- Service 3 -->
+<div class="bg-white dark:bg-surface-dark p-8 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-primary/50 transition-all hover:shadow-lg dark:hover:shadow-primary/5">
+<div class="size-12 rounded-lg bg-blue-100 dark:bg-blue-900/20 text-primary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">dns</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Backend Architecture</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Scalable server-side logic and database management.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> Node.js / Python
+                            </li>
+<li class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> Cloud Infrastructure (AWS)
+                            </li>
+<li class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span> Microservices
+                            </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="w-full bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800" id="contact">
+<div class="max-w-[1280px] px-4 md:px-10 py-16 md:py-24 mx-auto">
+<div class="flex flex-col lg:flex-row gap-16">
+<div class="lg:w-1/3">
+<h2 class="text-3xl font-bold tracking-tight mb-4">Let's build something together</h2>
+<p class="text-gray-600 dark:text-gray-400 mb-8">
+                                Have a project in mind? Looking to hire? Or just want to chat about tech? Drop me a message.
+                            </p>
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase text-gray-500">Email</p>
+<p class="font-medium">hello@devportfolio.com</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-background-light dark:bg-background-dark flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase text-gray-500">Location</p>
+<p class="font-medium">San Francisco, CA</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-2/3">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="name">Name</label>
+<input class="w-full bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 rounded-lg p-3 text-gray-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="name" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="email">Email</label>
+<input class="w-full bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 rounded-lg p-3 text-gray-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="email" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="subject">Subject</label>
+<select class="w-full bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 rounded-lg p-3 text-gray-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="subject">
+<option>Project Inquiry</option>
+<option>Job Opportunity</option>
+<option>General Question</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="message">Message</label>
+<textarea class="w-full bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 rounded-lg p-3 text-gray-900 dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" id="message" placeholder="Tell me about your project..." rows="5"></textarea>
+</div>
+<button class="bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors w-full md:w-auto" type="button">
+                                    Send Message
+                                </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full border-t border-gray-200 dark:border-gray-800 py-8 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1280px] px-4 md:px-10 mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-sm text-gray-500">© 2023 DevPortfolio. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">
+<span class="sr-only">GitHub</span>
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Twitter</span>
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">
+<span class="sr-only">LinkedIn</span>
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Detail - Fintech Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-hover": "#1d6bf5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-dark": "#18202F",
+                        "border-dark": "#282e39",
+                        "text-secondary": "#9da6b9"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden transition-colors duration-200">
+<div class="flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 dark:border-b-border-dark bg-white/90 dark:bg-[#111318]/90 backdrop-blur-md px-6 md:px-10 py-4">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-6 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_319)">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_6_319"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Alex Dev</h2>
+</div>
+<div class="flex items-center gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Work</a>
+<a class="text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">About</a>
+<a class="text-slate-600 dark:text-gray-300 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Resume</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary-hover text-white text-sm font-bold shadow-lg shadow-primary/20 transition-all">
+<span class="truncate">Get in touch</span>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex mb-8">
+<ol class="flex items-center space-x-2">
+<li>
+<a class="text-text-secondary hover:text-primary transition-colors text-sm font-medium" href="#">Projects</a>
+</li>
+<li>
+<span class="text-text-secondary text-sm">/</span>
+</li>
+<li aria-current="page" class="text-slate-900 dark:text-white text-sm font-medium">Fintech Analytics Dashboard</li>
+</ol>
+</nav>
+<!-- Hero Section -->
+<div class="relative w-full rounded-2xl overflow-hidden mb-12 group">
+<div class="aspect-video w-full bg-surface-dark relative">
+<!-- Hero Image -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Futuristic financial dashboard interface on a dark screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZTrQMx_Kh47N6qJD7RobYk1toux2_Pjl7lQriHQdyHIcvTOAUWGBBELrRJgPemnlPAf1GKA31aTF4qRj2n1_KTvaHR45wnQhO_7IFcOhcZ8Jb72TO_ZfXO8OchwEWCQJ8HsikKsnynwQnG2dn_dV1Sz53nmau_LDZri2qGJNmRH98KLoKMVHLl5nSiyCFZSy3nJiY86bNJqNLB5TipycSth-oIuNr-TXRpHAaFjA63XAOoZHn8qb-UmToYGedBv8IIslYiLGV3fk');"></div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent"></div>
+<!-- Hero Content -->
+<div class="absolute bottom-0 left-0 p-6 md:p-12 w-full">
+<h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight leading-tight">
+                                Fintech Analytics <br class="hidden md:block"/> Dashboard
+                            </h1>
+<p class="text-lg md:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
+                                Real-time financial data visualization platform for high-frequency trading analysis.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Content Narrative -->
+<div class="lg:col-span-8 space-y-16">
+<!-- Overview Section -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">article</span>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">The Challenge</h2>
+</div>
+<div class="prose prose-lg dark:prose-invert text-slate-600 dark:text-gray-300 leading-relaxed">
+<p class="mb-6">
+                                    Financial analysts at FinEdge Inc. were struggling with fragmented data sources. Their workflow required switching between five different legacy applications to gather the necessary data for a single trade decision. This context switching was introducing a latency of up to 4 minutes per decision—an eternity in high-frequency trading.
+                                </p>
+<p>
+                                    The goal was to unify these disparate data streams into a single, cohesive "glass-pane" dashboard that could handle real-time WebSocket updates without freezing the main thread, all while maintaining a 60fps render cycle.
+                                </p>
+</div>
+</section>
+<!-- Solution Section -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">The Solution</h2>
+</div>
+<div class="prose prose-lg dark:prose-invert text-slate-600 dark:text-gray-300 leading-relaxed">
+<p class="mb-6">
+                                    We architected a solution using Next.js for server-side rendering of initial states, combined with a custom WebSocket hook system for live updates. To handle the massive volume of data points, we opted for WebGL-accelerated charting libraries instead of traditional SVG-based solutions.
+                                </p>
+<div class="bg-surface-dark border border-border-dark rounded-xl p-6 my-8 font-mono text-sm overflow-x-auto">
+<div class="flex gap-2 mb-4">
+<div class="w-3 h-3 rounded-full bg-red-500"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+<div class="w-3 h-3 rounded-full bg-green-500"></div>
+</div>
+<p class="text-purple-400">const <span class="text-yellow-300">socket</span> = <span class="text-blue-400">useWebSocket</span>(url, {</p>
+<p class="pl-4 text-gray-300">onOpen: () =&gt; <span class="text-blue-400">console</span>.log(<span class="text-green-300">'Connected to feed'</span>),</p>
+<p class="pl-4 text-gray-300">shouldReconnect: (<span class="text-orange-300">closeEvent</span>) =&gt; <span class="text-blue-400">true</span>,</p>
+<p class="pl-4 text-gray-300">reconnectInterval: <span class="text-orange-300">3000</span>,</p>
+<p class="text-gray-300">});</p>
+</div>
+<p>
+                                    This architecture reduced the "time-to-decision" metric by <strong class="text-white font-semibold">40%</strong> within the first month of deployment.
+                                </p>
+</div>
+</section>
+<!-- Screenshot Gallery -->
+<section>
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary">imagesmode</span>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Interface Gallery</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-dark rounded-xl overflow-hidden border border-border-dark group cursor-zoom-in">
+<div class="aspect-[4/3] bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Data visualization chart with dark theme" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5Q0QiQQnHUK3g7QvIDI33GAWK3NGJ31eCqPS0lkCYRZVkVYE-livSpJo6tmTPEjMRBgqKeC6wQghGuzqs3hPYgx__vxQEucrVY3-Amzmpd9OnA267B9P7q1nPwB_shM5WIen_WLoB7jgSZM1qLKi9CAXNhHPUbAFxTnKQ9ZcWDvBnx93AVxKIyj4tgz88CmCflB6LSdIu6m7nHDpkEOq3FsiiyNVkUorEZHKHS-ju0YFiIeQcaAgA0cH8x0IziKWvDVJCOgguq64');">
+</div>
+<div class="p-4 border-t border-border-dark">
+<p class="text-sm font-medium text-white">Live Market Data Feed</p>
+</div>
+</div>
+<div class="bg-surface-dark rounded-xl overflow-hidden border border-border-dark group cursor-zoom-in">
+<div class="aspect-[4/3] bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Mobile responsive view of analytics app" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChKPcNFM5yxYQncrZuEeAejUSm3I3GXo5o1AJXVTFcmNlqean6KZPYJkO6BPnJBR7mqRzt39_pyThJZoUSxI5_QSCvUhA5N4VRtEDHeIee5IfpJ3cQVqvq7jx-YIPUh7njx2nmMohCcDtNhIflQtM1L01CUY_GHKFusfKAfJYbf2Z8_az4j_ZNMHL2rA8wg3HmOqt9SpHHXeTZc67LfM5FnJYrjSJPyWi5mn0xtn_f6CfXw5Tc_sqlDmejjW6hxl6X3xXdjxf3BsY');">
+</div>
+<div class="p-4 border-t border-border-dark">
+<p class="text-sm font-medium text-white">Mobile Responsiveness</p>
+</div>
+</div>
+<div class="bg-surface-dark rounded-xl overflow-hidden border border-border-dark group cursor-zoom-in md:col-span-2">
+<div class="aspect-[21/9] bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Wide view of full dashboard settings panel" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbK8QVwGzmkRLQnzDQKgJXFh-ybcMOoGX6pSZwJfV62XbyQmaT6uSCyvtIcO3zZfWBHSHWABqBOeb7xclfmcHv1JiByWSJA1uFLaNUFly_w2TzuZ2ZUGqnwDt_Mbnhqpr3H1Yg3835OSkpOKxI7yCcT01RC0AgZ-kfSnDrWXFgGfmXR5v57WgHYhOyVHGSGq1JqVAmO8qCGV_mq1KGyaYdpJtdmykYqae1MUgRQeGMBVnjnCX15xbeCcUuCEnn9J0uTihvS0ra4Zs');">
+</div>
+<div class="p-4 border-t border-border-dark">
+<p class="text-sm font-medium text-white">Global Configuration Panel</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Project Info Sidebar -->
+<div class="lg:col-span-4">
+<div class="sticky top-24 space-y-6">
+<!-- Key Info Card -->
+<div class="bg-white dark:bg-surface-dark rounded-xl p-6 border border-gray-200 dark:border-border-dark shadow-sm">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 border-b border-gray-200 dark:border-border-dark pb-4">Project Info</h3>
+<div class="space-y-5">
+<div class="grid grid-cols-[24px_1fr] gap-3">
+<span class="material-symbols-outlined text-text-secondary text-[20px] mt-0.5">business</span>
+<div>
+<p class="text-xs text-text-secondary uppercase tracking-wider font-semibold mb-1">Client</p>
+<p class="text-slate-800 dark:text-white font-medium">FinEdge Inc.</p>
+</div>
+</div>
+<div class="grid grid-cols-[24px_1fr] gap-3">
+<span class="material-symbols-outlined text-text-secondary text-[20px] mt-0.5">person</span>
+<div>
+<p class="text-xs text-text-secondary uppercase tracking-wider font-semibold mb-1">Role</p>
+<p class="text-slate-800 dark:text-white font-medium">Lead Frontend Engineer</p>
+</div>
+</div>
+<div class="grid grid-cols-[24px_1fr] gap-3">
+<span class="material-symbols-outlined text-text-secondary text-[20px] mt-0.5">calendar_month</span>
+<div>
+<p class="text-xs text-text-secondary uppercase tracking-wider font-semibold mb-1">Timeline</p>
+<p class="text-slate-800 dark:text-white font-medium">Oct 2023 - Dec 2023</p>
+</div>
+</div>
+</div>
+<div class="mt-8 flex flex-col gap-3">
+<a class="flex items-center justify-center gap-2 w-full bg-primary hover:bg-primary-hover text-white font-bold py-3 px-4 rounded-lg transition-all shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+                                        View Live Demo
+                                    </a>
+<a class="flex items-center justify-center gap-2 w-full bg-transparent border border-gray-300 dark:border-border-dark hover:border-gray-400 dark:hover:border-gray-500 text-slate-700 dark:text-white font-semibold py-3 px-4 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">code</span>
+                                        View Source
+                                    </a>
+</div>
+</div>
+<!-- Tech Stack Card -->
+<div class="bg-white dark:bg-surface-dark rounded-xl p-6 border border-gray-200 dark:border-border-dark shadow-sm">
+<h3 class="text-sm uppercase tracking-wider text-text-secondary font-bold mb-4">Technologies</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-background-dark border border-gray-200 dark:border-border-dark text-slate-700 dark:text-gray-300 text-xs font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#61DAFB]"></span> React
+                                    </span>
+<span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-background-dark border border-gray-200 dark:border-border-dark text-slate-700 dark:text-gray-300 text-xs font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-white"></span> Next.js
+                                    </span>
+<span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-background-dark border border-gray-200 dark:border-border-dark text-slate-700 dark:text-gray-300 text-xs font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#38B2AC]"></span> Tailwind
+                                    </span>
+<span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-background-dark border border-gray-200 dark:border-border-dark text-slate-700 dark:text-gray-300 text-xs font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#3178C6]"></span> TypeScript
+                                    </span>
+<span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-background-dark border border-gray-200 dark:border-border-dark text-slate-700 dark:text-gray-300 text-xs font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#FF4154]"></span> WebSockets
+                                    </span>
+<span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-background-dark border border-gray-200 dark:border-border-dark text-slate-700 dark:text-gray-300 text-xs font-medium flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#9945FF]"></span> Three.js
+                                    </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Next Project Navigation -->
+<div class="mt-20 pt-10 border-t border-gray-200 dark:border-border-dark">
+<div class="flex justify-between items-center mb-6">
+<h4 class="text-sm uppercase tracking-widest text-text-secondary font-bold">Next Project</h4>
+</div>
+<a class="group block relative rounded-2xl overflow-hidden bg-surface-dark border border-border-dark h-48 md:h-64" href="#">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-60" data-alt="Abstract code on a dark screen representing next project" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQMbvdEXb7y_50ZdfI_EWP-XJfxxVbvLv-GDC5F25kWtClqLy9H0zht0LuFncdQj0q54sZ44IR2IKT7GixcK8fRKq28YOPxPyZyvZ1LWU5MtbJ1AVs_6HRZZj4-5frMDlaf5ZbSFkbZlpECkFNUwkaOwtxtcjiRkCfpw1o2mSaMfoPQxh92KddI_yuBwLBQKS7tPerstW4vsjxU5t6afX0Ie5lBwui0SBzJdRPmD6OzZATFMbjWTqEZaRI7qdAAYpC57liTaAJMes');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-center">
+<span class="text-primary font-mono text-sm mb-2 group-hover:translate-x-2 transition-transform duration-300">02 / 05</span>
+<h3 class="text-3xl md:text-4xl font-bold text-white group-hover:translate-x-2 transition-transform duration-300 delay-75">
+                                E-Commerce API Gateway
+                            </h3>
+<div class="flex items-center gap-2 mt-4 text-gray-300 group-hover:translate-x-2 transition-transform duration-300 delay-100 group-hover:text-primary">
+<span class="font-medium">View Case Study</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</main>
+<footer class="border-t border-solid border-gray-200 dark:border-t-border-dark py-12 mt-12 bg-white dark:bg-[#111318]">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-500 dark:text-gray-500 text-sm">© 2024 Alex Dev. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Twitter</span>
+<svg class="h-5 w-5 fill-current" viewbox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+</a>
+<a class="text-slate-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">GitHub</span>
+<svg class="h-5 w-5 fill-current" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
