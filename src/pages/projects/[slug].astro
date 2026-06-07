@@ -62,14 +62,14 @@ function getProjectImage(title: string) {
 const projectImage = getProjectImage(repo.name);
 ---
 
-<Layout title={`${repo.name} - Project Detail`}>
+<Layout title={`${repo.name} - Detalle del proyecto`}>
   <Header />
   <main class="flex-grow w-full">
     <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
       <Breadcrumbs projectName={repo.name} />
       <ProjectHero
         name={repo.name}
-        description={repo.description || "No description provided."}
+        description={repo.description || "Sin descripción."}
         imageUrl={projectImage}
       />
 
@@ -78,7 +78,7 @@ const projectImage = getProjectImage(repo.name);
         <!-- Left Column: Content Narrative -->
         <div class="lg:col-span-8 space-y-16">
           <ProjectContent
-            description={repo.description || "No description provided."}
+            description={repo.description || "Sin descripción."}
             topics={repo.topics}
           />
         </div>

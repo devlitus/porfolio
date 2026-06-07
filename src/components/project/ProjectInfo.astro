@@ -11,7 +11,7 @@ const { createdAt, language, htmlUrl, homepageUrl, stars } = Astro.props;
 
 // Format the creation date
 const createdDate = new Date(createdAt);
-const formattedDate = createdDate.toLocaleDateString("en-US", {
+const formattedDate = createdDate.toLocaleDateString("es-ES", {
   month: "short",
   year: "numeric",
 });
@@ -42,7 +42,7 @@ function getLanguageColor(lang: string | null): string {
     <h3
       class="text-lg font-bold text-slate-900 dark:text-white mb-6 border-b border-gray-200 dark:border-[#282e39] pb-4"
     >
-      Project Info
+      Información del proyecto
     </h3>
     <div class="space-y-5">
       <div class="grid grid-cols-[24px_1fr] gap-3">
@@ -54,10 +54,10 @@ function getLanguageColor(lang: string | null): string {
           <p
             class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1"
           >
-            Type
+            Tipo
           </p>
           <p class="text-slate-800 dark:text-white font-medium">
-            Open Source Project
+            Proyecto de código abierto
           </p>
         </div>
       </div>
@@ -70,9 +70,9 @@ function getLanguageColor(lang: string | null): string {
           <p
             class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1"
           >
-            Role
+            Rol
           </p>
-          <p class="text-slate-800 dark:text-white font-medium">Developer</p>
+          <p class="text-slate-800 dark:text-white font-medium">Desarrollador</p>
         </div>
       </div>
       <div class="grid grid-cols-[24px_1fr] gap-3">
@@ -84,7 +84,7 @@ function getLanguageColor(lang: string | null): string {
           <p
             class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1"
           >
-            Created
+            Creado
           </p>
           <p class="text-slate-800 dark:text-white font-medium">
             {formattedDate}
@@ -100,7 +100,7 @@ function getLanguageColor(lang: string | null): string {
           <p
             class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1"
           >
-            Stars
+            Estrellas
           </p>
           <p class="text-slate-800 dark:text-white font-medium">
             {stars}
@@ -120,7 +120,7 @@ function getLanguageColor(lang: string | null): string {
             <span class="material-symbols-outlined text-[20px]">
               rocket_launch
             </span>
-            View Live Demo
+            Ver demo en vivo
           </a>
         )
       }
@@ -131,7 +131,7 @@ function getLanguageColor(lang: string | null): string {
         rel="noopener noreferrer"
       >
         <span class="material-symbols-outlined text-[20px]">code</span>
-        View Source
+        Ver código
       </a>
     </div>
   </div>
@@ -140,7 +140,7 @@ function getLanguageColor(lang: string | null): string {
     class="bg-white dark:bg-surface-dark rounded-xl p-6 border border-gray-200 dark:border-[#282e39] shadow-sm"
   >
     <h3 class="text-sm uppercase tracking-wider text-gray-500 font-bold mb-4">
-      Technologies
+      Tecnologías
     </h3>
     <div class="flex flex-wrap gap-2">
       {
