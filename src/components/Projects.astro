@@ -8,7 +8,6 @@ import imgCsv from '../assets/projects/project-csvviewer.png';
 import imgGallery from '../assets/projects/project-gallery.png';
 import imgDeep from '../assets/projects/project-deeplearning.png';
 import imgTravel from '../assets/projects/project-travel.png';
-import imgAinglish from '../assets/projects/project-ainglish.png';
 
 // Fallback just in case
 import dashboardImg from '../assets/projects/fintech-dashboard.png';
@@ -48,8 +47,6 @@ function getProjectImage(title: string) {
       return imgDeep;
     case "travel-web":
       return imgTravel;
-    case "ainglish":
-      return imgAinglish;
     default:
       return dashboardImg;
   }
@@ -88,8 +85,8 @@ function getProjectImage(title: string) {
         <a href={`/projects/${repo.name}`} class="flex flex-col flex-grow">
           <!-- HEADER: Image -->
           <div class="block w-full aspect-video bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
-              <Image 
-                  src={image} 
+              <Image
+                  src={image}
                   alt={repo.name}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   width={800}

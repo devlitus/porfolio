@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { fetchGitHubRepos } from "../../services/github.ts";
 
 interface Props {
@@ -58,9 +59,11 @@ const nextImage = getProjectImage(nextRepo.name);
     href={`/projects/${nextRepo.name}`}
   >
     <div class="absolute inset-0 overflow-hidden">
-      <img
-        src={nextImage.src}
+      <Image
+        src={nextImage}
         alt={nextRepo.name}
+        width={800}
+        height={450}
         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-60"
       />
     </div>
